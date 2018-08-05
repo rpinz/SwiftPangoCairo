@@ -9,7 +9,8 @@ class PangoCairoTests: XCTestCase {
     func testPangoCairoContext() {
         let w = 320
         let h = 240
-        let surface = imageSurfaceCreate(format: CAIRO_FORMAT_ARGB32, width: w, height: h)
+        let argb32: cairo_format_t = .argb32
+        let surface = imageSurfaceCreate(format: argb32, width: w, height: h)
         guard let cp = cairo_create(surface.ptr) else { XCTFail() ; return }
         let cairo_context = cairo.Context(cp)
         guard let ptr = createContext(cr: cairo_context) else { XCTFail() ; return }
