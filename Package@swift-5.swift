@@ -27,6 +27,6 @@ let package = Package(
             dependencies: ["PangoCairo"])
     ],
     swiftLanguageVersions: [
-        .v4_2
+        .v5
     ]
 )
